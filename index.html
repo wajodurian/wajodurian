@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Durian Lokal Asli Wajo | Siap Antar ke Makassar</title>
+
+<!-- Tailwind CSS dimuat lewat CDN, tidak perlu install apa pun -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          'kulit': '#2F4A2E',      // hijau tua, terinspirasi kulit durian
+          'kulit-light': '#4A6B45',
+          'daging': '#F4B731',     // kuning, terinspirasi daging durian
+          'daging-light': '#FCE8A8',
+          'krem': '#FBF6E9',       // krem hangat untuk background
+          'kayu': '#5C3A21'        // coklat kayu/tanah
+        },
+        fontFamily: {
+          'display': ['Georgia', 'Cambria', 'serif'],
+          'body': ['system-ui', '-apple-system', 'sans-serif']
+        }
+      }
+    }
+  }
+</script>
+
+<!-- File CSS kustom kita sendiri (warna, font, background hero) -->
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="font-body bg-krem text-kayu antialiased">
+
+<!-- ========================= HEADER / NAVBAR ========================= -->
+<header class="sticky top-0 z-50 bg-krem/95 backdrop-blur-sm border-b border-kulit/10">
+  <div class="max-w-6xl mx-auto px-5 sm:px-8 py-4 flex items-center justify-between">
+    <div class="flex items-center gap-2.5">
+      <span class="text-4xl"></span>
+      <img src="images/durian-lg.png" alt="Logo Durian Lokal Wajo" class="w-10 h-10">
+      <div class="leading-tight">
+        <p class="font-display text-lg sm:text-xl font-bold text-kulit tracking-tight">Durian Lokal Wajo</p>
+        <p class="text-[11px] sm:text-xs text-kulit-light font-medium uppercase tracking-wider">Khusus Wilayah Makassar</p>
+      </div>
+    </div>
+    <a id="nav-cta" href="#" target="_blank" rel="noopener"
+       class="bg-kulit text-krem text-sm sm:text-base font-semibold px-4 sm:px-5 py-2.5 rounded-full hover:bg-kulit-light transition-colors shadow-sm">
+      Hubungi Kami
+    </a>
+  </div>
+</header>
+
+<!-- ========================= HERO SECTION ========================= -->
+<!-- "hero-bg" = foto durian asli sebagai latar belakang (diatur di style.css) -->
+<!-- "hero-overlay" = lapisan gelap transparan supaya teks tetap terbaca -->
+<section class="hero-bg relative overflow-hidden">
+  <div class="hero-overlay absolute inset-0"></div>
+
+  <!-- relative + z-10 supaya konten ini tampil DI ATAS lapisan overlay -->
+  <div class="relative z-10 max-w-6xl mx-auto px-5 sm:px-8 py-20 sm:py-28 text-center sm:text-left">
+    <div class="max-w-xl">
+      <span class="inline-block bg-daging-light text-kayu text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-full mb-5">
+        🌳 Matang Pohon, Langsung dari Wajo
+      </span>
+      <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-[1.1] mb-5 text-shadow-soft">
+        Durian Lokal,
+        <span class="text-daging block sm:inline">Manis Asli Wajo</span>
+      </h1>
+      <p class="text-base sm:text-lg text-white/90 mb-8 leading-relaxed text-shadow-soft">
+        Daging tebal, biji kecil, aroma kuat khas hutan Wajo. Dipetik matang, langsung diantar ke depan pintu rumah Anda di Makassar — tanpa basa-basi, tanpa kecewa.
+      </p>
+      <div class="flex flex-wrap items-center justify-center sm:justify-start gap-4">
+        <a href="#produk"
+           class="bg-daging text-kulit font-bold px-7 py-3.5 rounded-full hover:bg-daging-light transition-colors shadow-lg shadow-daging/30 text-base sm:text-lg">
+          Lihat Pilihan Durian 🍴
+        </a>
+        <p class="text-sm text-white font-semibold text-shadow-soft">
+          🚚 Siap antar untuk sekitaran Makassar
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================= PRODUCT SECTION ========================= -->
+<section id="produk" class="bg-white py-16 sm:py-20">
+  <div class="max-w-6xl mx-auto px-5 sm:px-8">
+    <div class="text-center mb-12">
+      <h2 class="font-display text-3xl sm:text-4xl font-bold text-kulit mb-3">Pilihan Durian Kami</h2>
+      <p class="text-kayu/70 max-w-lg mx-auto">Dua ukuran, satu rasa: manis legit khas lokal. Pilih sesuai kebutuhan Anda.</p>
+    </div>
+
+    <!-- Kartu-kartu produk akan otomatis dibuat oleh script.js dari data produk -->
+    <div id="kontainer-produk" class="grid sm:grid-cols-2 gap-8 max-w-4xl mx-auto">
+      <!-- diisi otomatis oleh script.js -->
+    </div>
+  </div>
+</section>
+
+<!-- ========================= WHY CHOOSE US ========================= -->
+<section class="bg-kulit text-krem py-16 sm:py-20">
+  <div class="max-w-6xl mx-auto px-5 sm:px-8">
+    <h2 class="font-display text-3xl sm:text-4xl font-bold text-center mb-12">Kenapa Pilih Kami?</h2>
+    <div class="grid sm:grid-cols-3 gap-8">
+      <div class="text-center">
+        <div class="text-4xl mb-3">🌳</div>
+        <h3 class="font-bold text-lg mb-1.5">Matang Pohon</h3>
+        <p class="text-sm text-krem/75 leading-relaxed">Dipanen saat benar-benar matang, bukan dikarbit, rasanya jujur manis alami.</p>
+      </div>
+      <div class="text-center">
+        <div class="text-4xl mb-3">📍</div>
+        <h3 class="font-bold text-lg mb-1.5">Asli dari Wajo</h3>
+        <p class="text-sm text-krem/75 leading-relaxed">Langsung dari kebun lokal di Wajo, bukan durian campuran atau import.</p>
+      </div>
+      <div class="text-center">
+        <div class="text-4xl mb-3">🛵</div>
+        <h3 class="font-bold text-lg mb-1.5">Antar Cepat di Makassar</h3>
+        <p class="text-sm text-krem/75 leading-relaxed">Pesan hari ini, durian sampai di depan rumah Anda di sekitaran Makassar.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================= CTA STRIP ========================= -->
+<section class="bg-daging-light py-12">
+  <div class="max-w-4xl mx-auto px-5 sm:px-8 text-center">
+    <h2 class="font-display text-2xl sm:text-3xl font-bold text-kulit mb-3">Sudah Lapar Durian?</h2>
+    <p class="text-kayu/80 mb-6">Tinggal chat, sebutkan pilihan Anda, durian segar siap diantar ke rumah.</p>
+    <a id="cta-strip-button" href="#" target="_blank" rel="noopener"
+       class="inline-block bg-kulit text-krem font-bold px-8 py-4 rounded-full hover:bg-kulit-light transition-colors shadow-lg text-base sm:text-lg">
+      💬 Pesan Sekarang via WhatsApp
+    </a>
+  </div>
+</section>
+
+<!-- ========================= FOOTER ========================= -->
+<footer class="bg-kayu text-krem/80 py-10">
+  <div class="max-w-6xl mx-auto px-5 sm:px-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+    <div>
+      <p class="font-display text-lg font-bold text-krem">Durian Lokal Wajo</p>
+      <p class="text-sm">Siap antar untuk sekitaran Makassar 🥭</p>
+    </div>
+    <div class="text-sm text-right sm:text-right">
+      <p>📲 Hubungi via WhatsApp untuk pemesanan</p>
+      <p class="mt-1 text-krem/60">&copy; <span id="tahun-sekarang"></span> Durian Lokal Asli Wajo. Semua hak dilindungi.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- File JavaScript kustom kita: data produk, nomor WA, dan logika render -->
+<script src="script.js"></script>
+
+</body>
+</html>
